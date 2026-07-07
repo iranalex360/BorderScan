@@ -2,6 +2,11 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 import currentWaitsRouter from './app/routes/currentWaits.js';
 import communityReportsRouter from './app/routes/communityReports.js';
@@ -36,8 +41,13 @@ app.use('/api/prediction-quality', predictionQualityRouter);
 // Health check
 app.get('/health', (_req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
 
-// 404 handler
-app.use((_req, res) => res.status(404).json({ error: 'Not found' }));
+// Serve static assets in production
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Fallback all other routes to React App index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Error handler
 app.use((err, _req, res, _next) => {
