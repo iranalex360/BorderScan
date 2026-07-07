@@ -1,0 +1,38 @@
+[
+  {
+    "portCode": "SAN_YSIDRO",
+    "laneType": "standard",
+    "reportedWaitMinutes": 50,
+    "notes": "Agents checking every car, moving really slowly. Standard is backed up to the mall.",
+    "upvotes": 3,
+    "submittedAt": "2025-07-04T13:47:00-07:00",
+    "expiresAt":   "2025-07-04T15:47:00-07:00"
+  },
+  {
+    "portCode": "SAN_YSIDRO",
+    "laneType": "sentri",
+    "reportedWaitMinutes": 10,
+    "notes": "SENTRI moving fine, maybe 10 min.",
+    "upvotes": 1,
+    "submittedAt": "2025-07-04T13:55:00-07:00",
+    "expiresAt":   "2025-07-04T15:55:00-07:00"
+  },
+  {
+    "portCode": "OTAY_MESA",
+    "laneType": "standard",
+    "reportedWaitMinutes": 25,
+    "notes": "Much shorter than San Ysidro today. Recommend coming here.",
+    "upvotes": 5,
+    "submittedAt": "2025-07-04T13:50:00-07:00",
+    "expiresAt":   "2025-07-04T15:50:00-07:00"
+  },
+  {
+    "portCode": "OTAY_MESA",
+    "laneType": "standard",
+    "reportedWaitMinutes": 20,
+    "notes": "",
+    "upvotes": 2,
+    "submittedAt": "2025-07-04T14:02:00-07:00",
+    "expiresAt":   "2025-07-04T16:02:00-07:00"
+  }
+]

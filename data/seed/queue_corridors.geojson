@@ -1,0 +1,195 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "name": "BorderScan queue corridors",
+    "description": "Approximate hand-authored queue corridors for San Ysidro and Otay Mesa. Coordinates are starter/demo values and should be visually adjusted in Leaflet. These are starter/demo coordinates. For production, adjust turn points visually using Leaflet or generate route geometry from OpenStreetMap/OSRM.",
+    "coordinate_order": "[longitude, latitude]"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "san_ysidro_general_ready_long",
+        "port": "san_ysidro",
+        "display_name": "San Ysidro / El Chaparral - General and Ready",
+        "lane_types": ["general", "standard", "ready"],
+        "route_type": "vehicle_queue_corridor",
+        "confidence": "starter_approximation",
+        "entry_label": "San Ysidro / El Chaparral entry",
+        "default_queue_start_label": "Near 5 y 10 / Via Rapida approach",
+        "turn_points": [
+          {
+            "label": "Possible far queue start near 5 y 10",
+            "coordinates": [-116.99345, 32.5064]
+          },
+          {
+            "label": "Via Rapida Poniente approach",
+            "coordinates": [-117.0051, 32.5122]
+          },
+          {
+            "label": "Via Internacional approach",
+            "coordinates": [-117.0162, 32.5236]
+          },
+          {
+            "label": "Padre Kino / Via Internacional area",
+            "coordinates": [-117.0236, 32.5318]
+          },
+          {
+            "label": "El Chaparral funnel",
+            "coordinates": [-117.0306, 32.5378]
+          },
+          {
+            "label": "Mexico-side pre-entry curve",
+            "coordinates": [-117.0309, 32.5409]
+          },
+          {
+            "label": "San Ysidro POE entry area",
+            "coordinates": [-117.0268, 32.5433]
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-116.99345, 32.5064],
+          [-117.0051, 32.5122],
+          [-117.0162, 32.5236],
+          [-117.0236, 32.5318],
+          [-117.0306, 32.5378],
+          [-117.0309, 32.5409],
+          [-117.0268, 32.5433]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "san_ysidro_sentri_short",
+        "port": "san_ysidro",
+        "display_name": "San Ysidro - SENTRI approximate corridor",
+        "lane_types": ["sentri"],
+        "route_type": "vehicle_queue_corridor",
+        "confidence": "starter_approximation",
+        "entry_label": "San Ysidro SENTRI entry area",
+        "default_queue_start_label": "Padre Kino / Via Internacional area",
+        "turn_points": [
+          {
+            "label": "Padre Kino / Via Internacional area",
+            "coordinates": [-117.0236, 32.5318]
+          },
+          {
+            "label": "El Chaparral funnel",
+            "coordinates": [-117.0306, 32.5378]
+          },
+          {
+            "label": "Mexico-side SENTRI approach",
+            "coordinates": [-117.0309, 32.5409]
+          },
+          {
+            "label": "San Ysidro POE entry area",
+            "coordinates": [-117.0268, 32.5433]
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-117.0236, 32.5318],
+          [-117.0306, 32.5378],
+          [-117.0309, 32.5409],
+          [-117.0268, 32.5433]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "otay_mesa_general_ready_bellas_artes",
+        "port": "otay_mesa",
+        "display_name": "Otay Mesa - Bellas Artes General and Ready",
+        "lane_types": ["general", "standard", "ready"],
+        "route_type": "vehicle_queue_corridor",
+        "confidence": "starter_approximation",
+        "entry_label": "Otay Mesa passenger vehicle entry",
+        "default_queue_start_label": "Bellas Artes approach",
+        "turn_points": [
+          {
+            "label": "Far queue start on Bellas Artes / industrial approach",
+            "coordinates": [-116.9700, 32.5268]
+          },
+          {
+            "label": "Bellas Artes west approach",
+            "coordinates": [-116.9614, 32.5338]
+          },
+          {
+            "label": "Bellas Artes central approach",
+            "coordinates": [-116.9536, 32.54]
+          },
+          {
+            "label": "Bellas Artes curve toward Garita de Otay",
+            "coordinates": [-116.9476, 32.5452]
+          },
+          {
+            "label": "Otay Mesa Mexico-side queue funnel",
+            "coordinates": [-116.9420, 32.5502]
+          },
+          {
+            "label": "Otay Mesa POE entry area",
+            "coordinates": [-116.9392, 32.5520]
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-116.9700, 32.5268],
+          [-116.9614, 32.5338],
+          [-116.9536, 32.54],
+          [-116.9476, 32.5452],
+          [-116.9420, 32.5502],
+          [-116.9392, 32.5520]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "otay_mesa_sentri_short",
+        "port": "otay_mesa",
+        "display_name": "Otay Mesa - SENTRI approximate corridor",
+        "lane_types": ["sentri"],
+        "route_type": "vehicle_queue_corridor",
+        "confidence": "starter_approximation",
+        "entry_label": "Otay Mesa SENTRI entry",
+        "default_queue_start_label": "Bellas Artes central approach",
+        "turn_points": [
+          {
+            "label": "Bellas Artes central approach",
+            "coordinates": [-116.9536, 32.54]
+          },
+          {
+            "label": "Bellas Artes curve toward Garita de Otay",
+            "coordinates": [-116.9476, 32.5452]
+          },
+          {
+            "label": "Otay Mesa Mexico-side queue funnel",
+            "coordinates": [-116.9420, 32.5502]
+          },
+          {
+            "label": "Otay Mesa POE entry area",
+            "coordinates": [-116.9392, 32.5520]
+          }
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-116.9536, 32.54],
+          [-116.9476, 32.5452],
+          [-116.9420, 32.5502],
+          [-116.9392, 32.5520]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "port": "San Ysidro",
+    "portCode": "SAN_YSIDRO",
+    "timestamp": "2025-07-04T14:00:00-07:00",
+    "lanes": [
+      { "type": "standard", "waitMinutes": 45, "openLanes": 8,  "vehicles": 312 },
+      { "type": "sentri",   "waitMinutes": 8,  "openLanes": 2,  "vehicles": 45  },
+      { "type": "ready",    "waitMinutes": 20, "openLanes": 3,  "vehicles": 98  }
+    ]
+  },
+  {
+    "port": "Otay Mesa",
+    "portCode": "OTAY_MESA",
+    "timestamp": "2025-07-04T14:00:00-07:00",
+    "lanes": [
+      { "type": "standard", "waitMinutes": 22, "openLanes": 10, "vehicles": 188 },
+      { "type": "sentri",   "waitMinutes": 5,  "openLanes": 2,  "vehicles": 30  },
+      { "type": "ready",    "waitMinutes": 12, "openLanes": 3,  "vehicles": 55  }
+    ]
+  },
+  {
+    "port": "Tecate",
+    "portCode": "TECATE",
+    "timestamp": "2025-07-04T14:00:00-07:00",
+    "lanes": [
+      { "type": "standard", "waitMinutes": 15, "openLanes": 4, "vehicles": 72 }
+    ]
+  }
+]

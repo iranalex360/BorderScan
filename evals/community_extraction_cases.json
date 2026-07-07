@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ce-001",
+    "description": "Basic wait time extraction from plain text",
+    "input": { "notes": "Standard line moving really slow, been here 90 min already" },
+    "expected": {
+      "reportedWaitMinutes": 90,
+      "laneType": "standard",
+      "sentiment": "negative"
+    }
+  },
+  {
+    "id": "ce-002",
+    "description": "SENTRI lane mention",
+    "input": { "notes": "SENTRI was fast, about 5 minutes" },
+    "expected": {
+      "reportedWaitMinutes": 5,
+      "laneType": "sentri",
+      "sentiment": "positive"
+    }
+  },
+  {
+    "id": "ce-003",
+    "description": "Ambiguous lane type — should default to standard",
+    "input": { "notes": "Took almost an hour to get through" },
+    "expected": {
+      "reportedWaitMinutes": 60,
+      "laneType": "standard",
+      "sentiment": "negative"
+    }
+  },
+  {
+    "id": "ce-004",
+    "description": "No wait time mentioned",
+    "input": { "notes": "Agents are checking IDs" },
+    "expected": {
+      "reportedWaitMinutes": null,
+      "laneType": null,
+      "sentiment": "neutral"
+    }
+  },
+  {
+    "id": "ce-005",
+    "description": "Ready lane with positive sentiment",
+    "input": { "notes": "Ready lane is moving great, under 15 minutes" },
+    "expected": {
+      "reportedWaitMinutes": 15,
+      "laneType": "ready",
+      "sentiment": "positive"
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "pred-001",
+    "description": "Stable conditions, no holiday — expect gradual decrease",
+    "input": {
+      "port": "San Ysidro",
+      "laneType": "standard",
+      "currentWait": 45,
+      "isHoliday": false,
+      "communitySignalStrength": "medium",
+      "communityAvgWait": 48
+    },
+    "groundTruth": {
+      "waitAt30Min":  47,
+      "waitAt60Min":  45,
+      "waitAt120Min": 38
+    },
+    "acceptableMAE": 10
+  },
+  {
+    "id": "pred-002",
+    "description": "July 4th holiday — expect peak then gradual drop",
+    "input": {
+      "port": "San Ysidro",
+      "laneType": "standard",
+      "currentWait": 45,
+      "isHoliday": true,
+      "holidayName": "Independence Day",
+      "communitySignalStrength": "high",
+      "communityAvgWait": 50
+    },
+    "groundTruth": {
+      "waitAt30Min":  52,
+      "waitAt60Min":  58,
+      "waitAt120Min": 45
+    },
+    "acceptableMAE": 10
+  },
+  {
+    "id": "pred-003",
+    "description": "No community signal, only CBP data",
+    "input": {
+      "port": "Otay Mesa",
+      "laneType": "standard",
+      "currentWait": 20,
+      "isHoliday": false,
+      "communitySignalStrength": "none",
+      "communityAvgWait": null
+    },
+    "groundTruth": {
+      "waitAt30Min":  22,
+      "waitAt60Min":  20,
+      "waitAt120Min": 18
+    },
+    "acceptableMAE": 10,
+    "expectedMaxConfidence": "medium"
+  }
+]

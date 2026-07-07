@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rec-001",
+    "description": "Clear winner — Otay Mesa significantly faster",
+    "scenario": "San Ysidro 45min vs Otay Mesa 20min, standard lanes, no holiday",
+    "input": {
+      "cbpData": {
+        "lanes": [
+          { "port": "San Ysidro", "type": "standard", "waitMinutes": 45 },
+          { "port": "Otay Mesa",  "type": "standard", "waitMinutes": 20 }
+        ]
+      },
+      "laneType": "standard",
+      "holidayContext": { "isHoliday": false },
+      "communitySignals": { "reportsCount": 0, "signalStrength": "none" }
+    },
+    "expected": {
+      "recommendedPort": "Otay Mesa",
+      "recommendedLane": "standard"
+    }
+  },
+  {
+    "id": "rec-002",
+    "description": "Tie-break on data confidence",
+    "scenario": "Both ports equal wait time, San Ysidro has more community reports",
+    "input": {
+      "cbpData": {
+        "lanes": [
+          { "port": "San Ysidro", "type": "standard", "waitMinutes": 30 },
+          { "port": "Otay Mesa",  "type": "standard", "waitMinutes": 30 }
+        ]
+      },
+      "laneType": "standard",
+      "holidayContext": { "isHoliday": false },
+      "communitySignals": { "reportsCount": 5, "signalStrength": "high", "averageReportedWait": 30, "port": "San Ysidro" }
+    },
+    "expected": {
+      "recommendedLane": "standard",
+      "confidence": "high"
+    }
+  },
+  {
+    "id": "rec-003",
+    "description": "Holiday scenario — prefer lower absolute wait",
+    "scenario": "July 4th, San Ysidro 90min vs Otay Mesa 40min",
+    "input": {
+      "cbpData": {
+        "lanes": [
+          { "port": "San Ysidro", "type": "standard", "waitMinutes": 90 },
+          { "port": "Otay Mesa",  "type": "standard", "waitMinutes": 40 }
+        ]
+      },
+      "laneType": "standard",
+      "holidayContext": { "isHoliday": true, "holidays": [{ "name": "Independence Day" }], "trafficImpact": "high" },
+      "communitySignals": { "reportsCount": 4, "signalStrength": "high" }
+    },
+    "expected": {
+      "recommendedPort": "Otay Mesa",
+      "recommendedLane": "standard"
+    }
+  }
+]

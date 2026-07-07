@@ -1,0 +1,40 @@
+[
+  {
+    "date": "2025-07-04",
+    "country": "US",
+    "name": "Independence Day",
+    "type": "public",
+    "expectedTrafficImpact": "high",
+    "notes": "Historically one of the busiest border crossing days of the year."
+  },
+  {
+    "date": "2025-09-01",
+    "country": "US",
+    "name": "Labor Day",
+    "type": "public",
+    "expectedTrafficImpact": "high",
+    "notes": "Long weekend; high crossing volumes Friday through Monday."
+  },
+  {
+    "date": "2025-11-02",
+    "country": "MX",
+    "name": "Día de los Muertos",
+    "type": "public",
+    "expectedTrafficImpact": "moderate",
+    "notes": "Elevated southbound traffic as families travel to Mexico."
+  },
+  {
+    "date": "2025-12-25",
+    "country": "US",
+    "name": "Christmas Day",
+    "type": "public",
+    "expectedTrafficImpact": "high"
+  },
+  {
+    "date": "2025-12-25",
+    "country": "MX",
+    "name": "Navidad",
+    "type": "public",
+    "expectedTrafficImpact": "high"
+  }
+]

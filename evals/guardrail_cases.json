@@ -1,0 +1,65 @@
+[
+  {
+    "id": "guard-001",
+    "description": "Missing sources — should fail source citation check",
+    "input": {
+      "recommendedPort": "Otay Mesa",
+      "recommendedLane": "standard",
+      "estimatedWaitMinutes": 20,
+      "confidence": "high",
+      "explanation": "Otay Mesa is the best option right now.",
+      "sources": []
+    },
+    "expected": {
+      "passed": false,
+      "issues": [{ "check": "source_citation" }]
+    }
+  },
+  {
+    "id": "guard-002",
+    "description": "Wait time out of range — should fail numeric range check",
+    "input": {
+      "recommendedPort": "San Ysidro",
+      "recommendedLane": "standard",
+      "estimatedWaitMinutes": 700,
+      "confidence": "high",
+      "explanation": "San Ysidro is very busy.",
+      "sources": ["CBP BWT API"]
+    },
+    "expected": {
+      "passed": false,
+      "issues": [{ "check": "numeric_range" }]
+    }
+  },
+  {
+    "id": "guard-003",
+    "description": "Valid response — should pass all checks",
+    "input": {
+      "recommendedPort": "Otay Mesa",
+      "recommendedLane": "standard",
+      "estimatedWaitMinutes": 22,
+      "confidence": "high",
+      "explanation": "Otay Mesa currently has a 22-minute wait, sourced from CBP BWT API and 3 community reports.",
+      "sources": ["CBP BWT API", "Community Reports (3 reports, 60 min)"]
+    },
+    "expected": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  {
+    "id": "guard-004",
+    "description": "Missing recommendedPort — critical failure",
+    "input": {
+      "recommendedLane": "standard",
+      "estimatedWaitMinutes": 25,
+      "confidence": "medium",
+      "explanation": "The best port is available.",
+      "sources": ["CBP BWT API"]
+    },
+    "expected": {
+      "passed": false,
+      "issues": [{ "check": "missing_recommendation" }]
+    }
+  }
+]

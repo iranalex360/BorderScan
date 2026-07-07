@@ -1,0 +1,343 @@
+/* =====================================================
+   BorderScan — Global Stylesheet
+   Design system: dark mode, glassmorphism, Inter font
+   ===================================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Color palette */
+  --color-bg:         #0a0f1e;
+  --color-surface:    #111827;
+  --color-surface-2:  #1a2235;
+  --color-border:     rgba(255, 255, 255, 0.08);
+  --color-primary:    #3b82f6;
+  --color-primary-glow: rgba(59, 130, 246, 0.25);
+  --color-accent:     #06b6d4;
+  --color-success:    #22c55e;
+  --color-warning:    #f59e0b;
+  --color-danger:     #ef4444;
+  --color-text:       #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-glass:      rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.10);
+
+  /* Wait time colors */
+  --wait-green:  #22c55e;
+  --wait-yellow: #f59e0b;
+  --wait-orange: #f97316;
+  --wait-red:    #ef4444;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- App Shell --- */
+.app-shell { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* --- Header --- */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(10, 15, 30, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header-icon { font-size: 1.4rem; }
+
+.header-title {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-nav { display: flex; gap: 0.25rem; }
+
+.nav-link {
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-link:hover { color: var(--color-text); background: var(--color-glass); }
+.nav-link.active { color: var(--color-primary); background: var(--color-primary-glow); }
+
+/* --- Main Content --- */
+.app-main { flex: 1; padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+
+/* --- Cards --- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card), var(--shadow-glow); }
+
+.card-glass {
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(12px);
+}
+
+/* --- Wait Time Badges --- */
+.wait-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.wait-badge.green  { background: rgba(34, 197, 94, 0.15);  color: var(--wait-green);  }
+.wait-badge.yellow { background: rgba(245, 158, 11, 0.15); color: var(--wait-yellow); }
+.wait-badge.orange { background: rgba(249, 115, 22, 0.15); color: var(--wait-orange); }
+.wait-badge.red    { background: rgba(239, 68, 68, 0.15);  color: var(--wait-red);    }
+.wait-badge.gray   { background: rgba(148, 163, 184, 0.15); color: var(--color-text-muted); }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-primary:hover { background: #2563eb; box-shadow: 0 0 20px var(--color-primary-glow); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+.btn-ghost:hover { color: var(--color-text); background: var(--color-glass); }
+
+/* --- Section Headings --- */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* --- Grid Layouts --- */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* --- Utility --- */
+.text-muted  { color: var(--color-text-muted); }
+.text-sm     { font-size: 0.85rem; }
+.text-xs     { font-size: 0.75rem; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeInUp 0.35s ease both; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-primary-glow); }
+  50%       { box-shadow: 0 0 20px 4px var(--color-primary-glow); }
+}
+
+.pulse { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-surface-2); border-radius: 3px; }
+
+/* --- Mobile-First Media Queries --- */
+.queue-map-view {
+  height: 280px;
+  width: 100%;
+  background: var(--color-surface-2);
+}
+
+@media (min-width: 768px) {
+  .queue-map-view {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    padding: 1rem;
+  }
+  .app-header {
+    padding: 0 1rem;
+  }
+}
+
+/* --- Dashboard Grid Areas --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "rec"
+    "lane"
+    "ports"
+    "map"
+    "pred"
+    "report"
+    "explain"
+    "traces";
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "rec map"
+      "lane map"
+      "ports report"
+      "pred report"
+      "explain traces";
+    align-items: start;
+  }
+}
+
+.area-rec { grid-area: rec; }
+.area-lane { grid-area: lane; }
+.area-ports { grid-area: ports; }
+.area-map { grid-area: map; }
+.area-pred { grid-area: pred; }
+.area-report { grid-area: report; }
+.area-explain { grid-area: explain; }
+.area-traces { grid-area: traces; }
+
+/* --- Queue Map Refinements --- */
+.queue-map-card {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.queue-map-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.queue-map-container {
+  width: 100%;
+  height: 320px;
+  min-height: 320px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--color-surface-2);
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .queue-map-container {
+    height: 280px;
+    min-height: 280px;
+  }
+}
+
+.queue-map-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 320px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  background: var(--color-surface-2);
+  border-radius: 20px;
+}
+
+.queue-map-placeholder.queue-map-error {
+  color: var(--color-danger);
+}
