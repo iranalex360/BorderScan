@@ -13,7 +13,7 @@ BorderScan supports major crossings such as **San Ysidro**, **Otay Mesa**, and *
 
 Try the public interactive demo here:
 
-**🔗 Demo:** [BorderScan Live Demo](PASTE_YOUR_RENDER_URL_HERE)
+**🔗 Demo:** [BorderScan Live Demo](https://borderscan.onrender.com/)
 
 > Demo note: BorderScan attempts to use live CBP-style data when available. If live data is unavailable, the app clearly labels fallback demo data.
 
