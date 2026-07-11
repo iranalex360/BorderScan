@@ -77,6 +77,8 @@ BorderScan is designed as a mobile-first advisor. The dashboard includes:
 
 BorderScan uses an orchestrator pattern with specialized agent modules.
 
+More info in the [Wiki](https://github.com/iranalex360/BorderScan/wiki/Agentic-Process)
+
 ```mermaid
 graph TD
     UserQuery[User Dashboard Request] --> Orchestrator[BorderScanOrchestratorAgent]
